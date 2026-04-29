@@ -1,0 +1,9 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#0B0F1A"/>
+  <circle cx="660" cy="140" r="240" fill="#4DF6FF" fill-opacity="0.28"/>
+  <circle cx="180" cy="860" r="280" fill="#FF7F9D" fill-opacity="0.18"/>
+  <path d="M160 840C220 650 284 548 396 548C504 548 576 650 640 840" stroke="#E8EEFF" stroke-opacity="0.82" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="404" cy="402" r="120" fill="#B9A8FF" fill-opacity="0.5"/>
+  <path d="M302 404C302 346 348 300 406 300C464 300 510 346 510 404" stroke="#E8EEFF" stroke-opacity="0.9" stroke-width="10"/>
+  <text x="64" y="930" fill="#A2ADCA" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">ASTRA CREATIVE PROFILE</text>
+</svg>

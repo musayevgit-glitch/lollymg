@@ -1,0 +1,9 @@
+<svg width="900" height="1125" viewBox="0 0 900 1125" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1125" fill="#090C14"/>
+  <circle cx="714" cy="181" r="280" fill="#4DF6FF" fill-opacity="0.22"/>
+  <circle cx="184" cy="928" r="310" fill="#FF7F9D" fill-opacity="0.16"/>
+  <path d="M174 965C250 740 334 628 452 628C570 628 648 740 726 965" stroke="#E8EEFF" stroke-opacity="0.86" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="454" cy="460" r="136" fill="#B9A8FF" fill-opacity="0.45"/>
+  <path d="M334 452C352 388 398 340 452 340C506 340 552 388 570 452" stroke="#E8EEFF" stroke-opacity="0.9" stroke-width="12"/>
+  <text x="74" y="1038" fill="#A2ADCA" font-family="Arial, sans-serif" font-size="32" letter-spacing="4">LOLLY AGENCY BANNER</text>
+</svg>

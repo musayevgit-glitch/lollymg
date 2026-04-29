@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASTRA CREATIVE | OnlyFans Management Agency</title>
+    <meta
+      name="description"
+      content="ASTRA CREATIVE is a hyper-modern OnlyFans management agency handling growth, chat operations, and fan relationships 24/7."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="loader-orbit">
+        <span class="loader-core"></span>
+        <span class="loader-ring ring-a"></span>
+        <span class="loader-ring ring-b"></span>
+      </div>
+      <p>Assembling Astra Experience</p>
+    </div>
+
+    <div class="cursor" id="cursor">
+      <span id="cursorLabel"></span>
+    </div>
+
+    <div class="ambient ambient-a" id="ambientA"></div>
+    <div class="ambient ambient-b" id="ambientB"></div>
+    <div class="ambient ambient-c" id="ambientC"></div>
+
+    <header class="site-header">
+      <a href="#" class="brand">ASTRA CREATIVE</a>
+      <nav>
+        <a href="#process">Process</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-cta" data-magnetic>Book Strategy Call</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">OnlyFans Management, Reimagined</p>
+          <h1>
+            We run your <span class="glow-word">OnlyFans</span> 24/7,
+            so your brand scales with precision.
+          </h1>
+          <p class="lead">
+            ASTRA CREATIVE is a full-service growth partner. Trained chatters,
+            conversion-focused content systems, retention strategy, and premium
+            fan relationship management.
+          </p>
+          <div class="hero-actions">
+            <button class="primary" data-magnetic>Start With Astra</button>
+            <button class="ghost" data-magnetic>See How It Works</button>
+          </div>
+        </div>
+        <div class="hero-object-wrap">
+          <div class="hero-object" id="heroObject" aria-hidden="true">
+            <div class="orbital orbital-1"></div>
+            <div class="orbital orbital-2"></div>
+            <div class="orbital orbital-3"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="process" id="process">
+        <div class="section-title">
+          <p>Interactive Process</p>
+          <h2>From onboarding to elite monthly performance.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="panel active" data-panel>
+            <h3>01. Brand Positioning</h3>
+            <p>
+              We map your niche, define your premium tone, and build a growth
+              architecture designed for loyal fan ecosystems.
+            </p>
+          </article>
+          <article class="panel" data-panel>
+            <h3>02. 24/7 Chatter Team</h3>
+            <p>
+              Dedicated trained chatters manage DMs around the clock, building
+              trust, urgency, and consistent high-value conversion moments.
+            </p>
+          </article>
+          <article class="panel" data-panel>
+            <h3>03. Revenue Systems</h3>
+            <p>
+              PPV scripting, retention funnels, campaign timing, and spend-ready
+              upsell structures that increase average fan value.
+            </p>
+          </article>
+          <article class="panel" data-panel>
+            <h3>04. Data-Led Optimization</h3>
+            <p>
+              We track response quality, conversion windows, and fan behavior to
+              tune your account weekly for compounding growth.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="showcase" id="showcase">
+        <div class="section-title">
+          <p>Portfolio Snapshot</p>
+          <h2>Hover to preview. Click to dive in.</h2>
+        </div>
+
+        <ul class="project-list">
+          <li class="project" data-color="#4df6ff" data-label="Model A | +312%">
+            <button data-magnetic>Luxury Persona Relaunch</button>
+          </li>
+          <li class="project" data-color="#ff7f9d" data-label="Model B | +221%">
+            <button data-magnetic>Retention Funnel Overhaul</button>
+          </li>
+          <li class="project" data-color="#b9a8ff" data-label="Model C | +408%">
+            <button data-magnetic>Premium Chat Conversion System</button>
+          </li>
+          <li class="project" data-color="#8af8c4" data-label="Model D | +287%">
+            <button data-magnetic>High-Ticket PPV Story Engine</button>
+          </li>
+        </ul>
+
+        <div class="project-follower" id="projectFollower" aria-hidden="true">
+          <span id="projectFollowerLabel"></span>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-title">
+          <p>Contact Astra</p>
+          <h2>Let us scale your account while you stay in your creative zone.</h2>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@brand.com" required />
+          </label>
+          <label>
+            <span>Current Monthly Revenue</span>
+            <input type="text" name="revenue" placeholder="Example: $8,000" />
+          </label>
+          <label>
+            <span>Goals</span>
+            <textarea
+              name="goals"
+              rows="4"
+              placeholder="Tell us your growth targets and current challenges"
+            ></textarea>
+          </label>
+          <button class="primary" type="submit" data-magnetic>
+            Request Private Strategy Session
+          </button>
+          <p class="form-note" id="formNote" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
