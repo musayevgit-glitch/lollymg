@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const HERO_BANNER_SRC = "/images/nudebanner.jpg";
+const HERO_BANNER_SRC = "/images/abc.JPG";
 const SOFT_BG_SRC = "/images/bgall.jpg";
 
 const projects = [
@@ -35,19 +35,19 @@ const panels = [
 const creators = [
   {
     name: "Creator One",
-    src: "/creators/cr1.jpg",
+    src: "/creators/stat1.JPG",
     stat: "+186% Monthly Net",
     focus: "DM Conversion",
   },
   {
     name: "Creator Two",
-    src: "/creators/cr2.jpg",
+    src: "/creators/stat2.JPG",
     stat: "+241% Retention",
     focus: "VIP Funnel",
   },
   {
     name: "Creator Three",
-    src: "/creators/cr3.jpg",
+    src: "/creators/stat3.png",
     stat: "+329% PPV Revenue",
     focus: "Story Sales",
   },
@@ -336,12 +336,12 @@ export default function HomePage() {
         </a>
         <nav>
             <a href="#process" onClick={(e) => handleNavClick(e, "process")}>Process</a>
-            <a href="#creators" onClick={(e) => handleNavClick(e, "creators")}>Creators</a>
-            <a href="#showcase" onClick={(e) => handleNavClick(e, "showcase")}>Showcase</a>
+            <a href="#creators" onClick={(e) => handleNavClick(e, "creators")}>Success</a>
+            <a href="#showcase" onClick={(e) => handleNavClick(e, "showcase")}>FAQ</a>
             <a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>Contact</a>
         </nav>
         <button className="nav-cta" data-magnetic onClick={() => scrollToId("contact")}>
-          Book Strategy Call
+          Apply Now
         </button>
       </header>
 
@@ -412,6 +412,7 @@ export default function HomePage() {
                     alt={`${creator.name} profile visual`}
                     fill
                     sizes="(max-width: 900px) 100vw, 33vw"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <div className="creator-meta">
@@ -427,7 +428,7 @@ export default function HomePage() {
         <section className="showcase" id="showcase">
           <div className="section-title">
             <p>Portfolio Snapshot</p>
-            <h2>Hover to preview. Click to dive in.</h2>
+            <h2>Frequently Asked Questions.</h2>
           </div>
 
           <ul className="project-list">

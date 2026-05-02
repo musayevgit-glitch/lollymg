@@ -507,7 +507,8 @@ section {
 .creator-image-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  min-height: 120px;
+  aspect-ratio: 4 / 2;
   overflow: hidden;
 }
 

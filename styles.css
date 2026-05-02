@@ -392,6 +392,52 @@ section {
   letter-spacing: 0.01em;
 }
 
+.creators-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.creator-card {
+  background: rgba(15, 19, 32, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  gap: 16px;
+}
+
+.creator-image-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  aspect-ratio: 4 / 2;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(232, 238, 255, 0.08), rgba(15, 19, 32, 0.92));
+}
+
+.creator-meta {
+  padding: 18px 18px 20px;
+}
+
+.creator-meta h3 {
+  margin: 0 0 6px;
+}
+
+.creator-meta p,
+.creator-meta strong {
+  margin: 0;
+  color: var(--muted);
+}
+
+.creator-meta strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
 .project-follower {
   position: fixed;
   width: 132px;
@@ -529,6 +575,10 @@ section {
   }
 
   .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creators-grid {
     grid-template-columns: 1fr;
   }
 
