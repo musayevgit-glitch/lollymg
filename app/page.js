@@ -6,11 +6,47 @@ import { useEffect, useRef, useState } from "react";
 const HERO_BANNER_SRC = "/images/abc.JPG";
 const SOFT_BG_SRC = "/images/bgall.jpg";
 
-const projects = [
-  { title: "Luxury Persona Relaunch", color: "#4df6ff", label: "Model A | +312%" },
-  { title: "Retention Funnel Overhaul", color: "#ff7f9d", label: "Model B | +221%" },
-  { title: "Premium Chat Conversion System", color: "#b9a8ff", label: "Model C | +408%" },
-  { title: "High-Ticket PPV Story Engine", color: "#8af8c4", label: "Model D | +287%" },
+const faqs = [
+  {
+    question: "What is LOLLY AGENCY and how can it help me succeed on OnlyFans?",
+    answer: "LOLLY AGENCY is a full-service OnlyFans management company. We handle everything from 24/7 subscriber engagement, premium content strategy, conversion optimization, and revenue maximization. Our trained chatter team manages DMs around the clock to build trust and drive consistent high-value conversion moments. We handle the business side so you can focus on your creative vision."
+  },
+  {
+    question: "What makes LOLLY AGENCY different from other OnlyFans agencies?",
+    answer: "Unlike generic agencies, we specialize exclusively in OnlyFans growth with a data-led approach. We combine brand positioning, dedicated 24/7 chatter teams, premium conversion systems, and weekly optimization based on real fan behavior. Each strategy is customized for your niche—whether luxury positioning, high-ticket PPV, or retention-focused models. We track metrics that matter: response quality, conversion windows, and fan lifetime value."
+  },
+  {
+    question: "What are the benefits of working with LOLLY AGENCY?",
+    answer: "Direct benefits include: 24/7 account management, increased subscriber engagement and PPV conversions, optimized fan retention, higher average monthly revenue, access to proven conversion scripts and funnels, data-driven account tuning, and more time for you to focus on creative content. Our clients typically see 200-400% growth in their first 90 days."
+  },
+  {
+    question: "How does LOLLY AGENCY ensure my privacy and safety?",
+    answer: "Your privacy and security are non-negotiable. We use encrypted communication channels, strict confidentiality agreements, and never share subscriber data. Your account credentials are protected with industry-standard security. We only access your account to manage strategy execution—chatting, content timing, and analytics review. You maintain full control and can revoke access anytime."
+  },
+  {
+    question: "What is your commission or fee structure?",
+    answer: "We operate on a performance-based commission model. Instead of upfront fees, we take a percentage of the revenue we help you generate. This aligns our incentives with yours—we only succeed when you succeed. Exact percentages vary based on your account tier, growth goals, and level of service. We'll discuss pricing during your private strategy session."
+  },
+  {
+    question: "What kind of growth can I expect with LOLLY AGENCY?",
+    answer: "Growth varies by starting point, niche, and engagement. Most creators see 200-400% revenue increase within 90 days. Some top performers have achieved 1000%+ growth. Realistic expectations: increased subscriber retention, 3-5x higher PPV conversion rates, consistent daily PPV sales, and more predictable monthly revenue. We focus on sustainable, compound growth—not vanity metrics."
+  },
+  {
+    question: "How do you help with content creation and curation?",
+    answer: "Our team doesn't create content for you—that's your creative domain. Instead, we strategize when and how to release content for maximum impact. We optimize content timing based on your fan behavior, create PPV scripting templates that convert, suggest content themes that resonate with your audience, and manage the promotional side. You create; we amplify and monetize."
+  },
+  {
+    question: "How quickly can I start earning money after joining LOLLY AGENCY?",
+    answer: "Most creators see meaningful revenue increase within the first 30 days. Our chatter team begins engagement immediately, and PPV conversion optimizations take effect within 7-14 days. However, compound results build over 90 days as we refine your strategy, grow your subscriber base quality, and establish fan relationship patterns. Quick wins are possible, but lasting growth requires consistent execution."
+  },
+  {
+    question: "What success stories can LOLLY AGENCY share from models who have joined?",
+    answer: "We've worked with luxury creators who increased revenue from $8K to $40K+ monthly. Content creators grew their fan base by 300% while improving quality and engagement. Retention models decreased churn by 60% and doubled fan lifetime value. PPV specialists went from inconsistent sales to $3K-$8K daily PPV revenue. While results vary, consistent execution with our system yields significant growth across all creator types."
+  },
+  {
+    question: "How can I get started with LOLLY AGENCY?",
+    answer: "Simple: Apply through our website. We'll review your application and schedule a private strategy session. During the call, we'll analyze your current account, discuss your goals, explain our approach, and create a custom growth plan. If it's a fit, we'll onboard you and start driving results. Most creators go from application to first chatter engagement within 3-5 business days."
+  }
 ];
 
 const panels = [
@@ -36,28 +72,25 @@ const creators = [
   {
     name: "Creator One",
     src: "/creators/stat1.JPG",
-    stat: "+186% Monthly Net",
-    focus: "DM Conversion",
+
   },
   {
     name: "Creator Two",
     src: "/creators/stat2.JPG",
-    stat: "+241% Retention",
-    focus: "VIP Funnel",
+   
   },
   {
     name: "Creator Three",
     src: "/creators/stat3.png",
-    stat: "+329% PPV Revenue",
-    focus: "Story Sales",
+
   },
 ];
 
 export default function HomePage() {
   const [activePanel, setActivePanel] = useState(0);
+  const [activeFaq, setActiveFaq] = useState(0);
   const [formNote, setFormNote] = useState("");
   const [preloaderHidden, setPreloaderHidden] = useState(false);
-  const [bgSrc, setBgSrc] = useState(SOFT_BG_SRC);
 
   const cursorRef = useRef(null);
   const cursorLabelRef = useRef(null);
@@ -160,8 +193,21 @@ export default function HomePage() {
       };
     });
 
-    const revealTargets = Array.from(document.querySelectorAll("section, .panel, .project, .creator-card"));
-    revealTargets.forEach((el) => el.classList.add("reveal"));
+    const sections = Array.from(document.querySelectorAll("main > section"));
+    sections.forEach((section, index) => {
+      section.classList.add("reveal", "section-motion", `motion-${index % 2 === 0 ? "left" : "right"}`);
+      section.style.setProperty("--section-index", index);
+    });
+
+    const revealTargets = [
+      ...sections,
+      ...Array.from(document.querySelectorAll(".panel, .creator-card, .faq-item, .contact-highlights div, .form-field, .agency-field, .contact-submit")),
+    ];
+
+    revealTargets.forEach((el, index) => {
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-order", index % 8);
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -183,36 +229,6 @@ export default function HomePage() {
       window.cancelAnimationFrame(rafId);
       observer.disconnect();
       magneticHandlers.forEach((cleanup) => cleanup());
-    };
-  }, []);
-
-  useEffect(() => {
-    // Resolve available background image among common extensions
-    const candidates = [
-      "/images/soft-bg.webp",
-      "/images/soft-bg.png",
-      "/images/soft-bg.jpg",
-      "/images/soft-bg.svg",
-      "/images/bgall.jpg",
-    ];
-    let cancelled = false;
-
-    (async () => {
-      for (const p of candidates) {
-        try {
-          const res = await fetch(p, { method: "HEAD" });
-          if (res.ok) {
-            if (!cancelled) setBgSrc(p);
-            break;
-          }
-        } catch (e) {
-          // ignore
-        }
-      }
-    })();
-
-    return () => {
-      cancelled = true;
     };
   }, []);
 
@@ -328,7 +344,13 @@ export default function HomePage() {
       <div className="ambient ambient-a" ref={ambientARef} />
       <div className="ambient ambient-b" ref={ambientBRef} />
       <div className="ambient ambient-c" ref={ambientCRef} />
-      <div className="background-photo" style={{ backgroundImage: `url(${bgSrc})` }} aria-hidden="true" />
+      <div className="background-photo" style={{ backgroundImage: `url(${SOFT_BG_SRC})` }} aria-hidden="true" />
+
+      <a href="https://instagram.com/lollymgmt" target="_blank" rel="noopener noreferrer" className="instagram-icon" aria-label="Follow LOLLY AGENCY on Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12c0-3.403 2.759-6.162 6.162-6.162 3.403 0 6.162 2.759 6.162 6.162 0 3.403-2.759 6.162-6.162 6.162-3.403 0-6.162-2.759-6.162-6.162zm2.889 0c0 1.821 1.453 3.276 3.273 3.276 1.821 0 3.276-1.455 3.276-3.276 0-1.82-1.455-3.273-3.276-3.273-1.82 0-3.273 1.453-3.273 3.273zm10.354-6.558c0 .795.645 1.44 1.44 1.44.795 0 1.44-.645 1.44-1.44-.001-.795-.645-1.44-1.44-1.44-.795 0-1.44.645-1.44 1.44z"/>
+        </svg>
+      </a>
 
       <header className="site-header">
         <a href="#" className="brand">
@@ -427,110 +449,140 @@ export default function HomePage() {
 
         <section className="showcase" id="showcase">
           <div className="section-title">
-            <p>Portfolio Snapshot</p>
-            <h2>Frequently Asked Questions.</h2>
+            <p>Questions & Answers</p>
+            <h2 className="faq-heading">
+              <span>Frequently Asked Questions.</span>
+              <span className="bra-icon" aria-hidden="true">
+                <svg viewBox="0 0 96 64" role="img" focusable="false">
+                  <path className="bra-strap" d="M15 31C19 16 28 9 42 9" />
+                  <path className="bra-strap" d="M81 31C77 16 68 9 54 9" />
+                  <path className="bra-cup" d="M10 31C17 22 29 20 39 27C45 31 47 39 47 51C34 55 18 51 10 31Z" />
+                  <path className="bra-cup" d="M86 31C79 22 67 20 57 27C51 31 49 39 49 51C62 55 78 51 86 31Z" />
+                  <path className="bra-band" d="M42 36C46 39 50 39 54 36" />
+                  <path className="bra-band" d="M8 31H2" />
+                  <path className="bra-band" d="M94 31H88" />
+                </svg>
+              </span>
+            </h2>
           </div>
 
-          <ul className="project-list">
-            {projects.map((project) => (
-              <li
-                className="project"
-                key={project.title}
-                onMouseEnter={(event) => handleProjectEnter(project, event)}
-                onMouseMove={handleProjectMove}
-                onMouseLeave={handleProjectLeave}
-              >
-                <button data-magnetic>{project.title}</button>
-              </li>
+          <div className="faq-container">
+            {faqs.map((faq, index) => (
+              <article className={`faq-item${activeFaq === index ? " open" : ""}`} key={faq.question}>
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === index ? -1 : index)}
+                  aria-expanded={activeFaq === index}
+                  data-magnetic
+                >
+                  <span className="faq-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="faq-text">{faq.question}</span>
+                  <span className="faq-toggle" aria-hidden="true" />
+                </button>
+                {activeFaq === index && (
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                )}
+              </article>
             ))}
-          </ul>
-
-          <div className="project-follower" ref={followerRef} aria-hidden="true">
-            <span ref={followerLabelRef} />
           </div>
         </section>
 
         <section className="contact" id="contact">
-          <div className="section-title">
-            <p>Contact Lolly</p>
-            <h2>Let us scale your account while you stay in your creative zone.</h2>
-          </div>
-
-          <form className="contact-form" onSubmit={onSubmit}>
-            <div className="form-row">
-              <label>
-                <span>First Name</span>
-                <input type="text" name="firstName" placeholder="First name" required />
-              </label>
-              <label>
-                <span>Last Name</span>
-                <input type="text" name="lastName" placeholder="Last name" required />
-              </label>
-            </div>
-
-            <div className="form-row">
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@brand.com" required />
-              </label>
-              <label>
-                <span>Phone</span>
-                <input type="tel" name="phone" placeholder="+1 555 555 5555" required />
-              </label>
-            </div>
-
-            <label>
-              <span>Instagram Handle / URL</span>
-              <input type="text" name="instagram" placeholder="@yourhandle or https://instagram.com/you" />
-            </label>
-
-            <label>
-              <span>Have you worked with an agency?</span>
-              <div className="radio-row">
-                <label><input type="radio" name="workedWithAgency" value="yes" /> Yes</label>
-                <label><input type="radio" name="workedWithAgency" value="no" defaultChecked /> No</label>
+          <div className="contact-layout">
+            <div className="contact-copy">
+              <div className="section-title">
+                <p>Contact Lolly</p>
+                <h2>Let us scale your account while you stay in your creative zone.</h2>
               </div>
-            </label>
+              <div className="contact-highlights" aria-label="Lolly contact highlights">
+                <div>
+                  <strong>24h</strong>
+                  <span>Private review</span>
+                </div>
+                <div>
+                  <strong>3-5d</strong>
+                  <span>Onboarding window</span>
+                </div>
+                <div>
+                  <strong>100%</strong>
+                  <span>Confidential process</span>
+                </div>
+              </div>
+            </div>
 
-            <label>
-              <span>OnlyFans link</span>
-              <input type="url" name="onlyfans" placeholder="https://onlyfans.com/yourprofile" />
-            </label>
+            <form className="contact-form" onSubmit={onSubmit}>
+              <div className="form-row">
+                <label className="form-field">
+                  <span>First Name</span>
+                  <input type="text" name="firstName" placeholder="First name" required />
+                </label>
+                <label className="form-field">
+                  <span>Last Name</span>
+                  <input type="text" name="lastName" placeholder="Last name" required />
+                </label>
+              </div>
 
-            <label>
-              <span>Account status</span>
-              <select name="accountStatus">
-                <option value="part-time">Part-time</option>
-                <option value="full-time">Full-time</option>
-                <option value="onboarding">Onboarding</option>
-                <option value="paused">Paused</option>
-              </select>
-            </label>
+              <div className="form-row">
+                <label className="form-field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@brand.com" required />
+                </label>
+                <label className="form-field">
+                  <span>Phone</span>
+                  <input type="tel" name="phone" placeholder="+1 555 555 5555" required />
+                </label>
+              </div>
 
-            <label>
-              <span>Monthly revenue</span>
-              <select name="monthlyRevenue">
-                <option value="0-4999">0 - 4,999</option>
-                <option value="5000-19999">5,000 - 19,999</option>
-                <option value="20000-49999">20,000 - 49,999</option>
-                <option value="50000+">50,000+</option>
-              </select>
-            </label>
+              <label className="form-field">
+                <span>Instagram Handle / URL</span>
+                <input type="text" name="instagram" placeholder="@yourhandle or https://instagram.com/you" />
+              </label>
 
-            <label>
-              <span>About yourself</span>
-              <textarea name="about" rows="4" placeholder="Tell us about your content, goals, and challenges" />
-            </label>
+              <fieldset className="agency-field">
+                <legend>Have you worked with an agency?</legend>
+                <div className="radio-row">
+                  <label><input type="radio" name="workedWithAgency" value="yes" /> <span>Yes</span></label>
+                  <label><input type="radio" name="workedWithAgency" value="no" defaultChecked /> <span>No</span></label>
+                </div>
+              </fieldset>
 
-            <button className="primary" type="submit" data-magnetic>
-              Request Private Strategy Session
-            </button>
-            <p className="form-note" aria-live="polite">
-              {formNote}
-            </p>
-          </form>
+              <label className="form-field">
+                <span>OnlyFans link</span>
+                <input type="url" name="onlyfans" placeholder="https://onlyfans.com/yourprofile" />
+              </label>
+
+              <label className="form-field">
+                <span>Monthly revenue</span>
+                <select name="monthlyRevenue">
+                  <option value="0-4999">0 - 4,999</option>
+                  <option value="5000-19999">5,000 - 19,999</option>
+                  <option value="20000-49999">20,000 - 49,999</option>
+                  <option value="50000+">50,000+</option>
+                </select>
+              </label>
+
+              <label className="form-field">
+                <span>About yourself</span>
+                <textarea name="about" rows="4" placeholder="Tell us about your content, goals, and challenges" />
+              </label>
+
+              <button className="primary contact-submit" type="submit" data-magnetic>
+                Request Private Strategy Session
+              </button>
+              <p className="form-note" aria-live="polite">
+                {formNote}
+              </p>
+            </form>
+          </div>
         </section>
       </main>
+
+      <footer className="site-footer">
+        <strong>2026 Lolly Agency</strong>
+        <p>Private OnlyFans management, growth strategy, and creator support.</p>
+      </footer>
     </>
   );
 }

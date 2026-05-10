@@ -392,6 +392,77 @@ section {
   letter-spacing: 0.01em;
 }
 
+.faq-container {
+  margin-top: 30px;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(15, 19, 32, 0.7);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(77, 246, 255, 0.68);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  text-align: left;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--cyan);
+}
+
+.faq-number {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--cyan);
+  min-width: 28px;
+}
+
+.faq-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.faq-answer {
+  padding: 0 22px 20px;
+  border-top: 1px solid var(--line);
+  animation: slideDown 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .creators-grid {
   margin-top: 30px;
   display: grid;
@@ -515,6 +586,35 @@ section {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.instagram-icon {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 19, 32, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  z-index: 100;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.instagram-icon:hover {
+  background: rgba(77, 246, 255, 0.15);
+  border-color: rgba(77, 246, 255, 0.68);
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(77, 246, 255, 0.25);
+}
+
+.instagram-icon:active {
+  transform: scale(0.95);
 }
 
 @keyframes loaderSpin {

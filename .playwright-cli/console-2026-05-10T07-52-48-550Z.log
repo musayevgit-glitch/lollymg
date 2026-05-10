@@ -1,0 +1,67 @@
+[    5413ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[   96761ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[   97925ms] [LOG] [Fast Refresh] done in 1164ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  105446ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[  105905ms] [LOG] [Fast Refresh] done in 459ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  118970ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[  119748ms] [LOG] [Fast Refresh] done in 778ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  128535ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[  128932ms] [LOG] [Fast Refresh] done in 396ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  129079ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[  131335ms] [LOG] [Fast Refresh] done in 2256ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[  132233ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/?_rsc=fsnpp:0
+[  132508ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/?_rsc=fsnpp:0
+[  132798ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/?_rsc=fsnpp:0
+[  133188ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3010/:0
+[  133482ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  133586ms] TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_require__ (file:///home/musayev/Documents/alif/.next/server/webpack-runtime.js:25:42)
+    at eval (webpack-internal:///(rsc)/./node_modules/next/dist/server/app-render/encryption-utils.js:40:35)
+    at <unknown> (rsc)/./node_modules/next/dist/server/app-render/encryption-utils.js (/home/musayev/Documents/alif/.next/server/vendor-chunks/next.js:1849:1)
+    at __webpack_require__ (file:///home/musayev/Documents/alif/.next/server/webpack-runtime.js:25:42)
+    at eval (webpack-internal:///(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.js&appDir=%2Fhome%2Fmusayev%2FDocuments%2Falif%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fhome%2Fmusayev%2FDocuments%2Falif&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D&isGlobalNotFoundEnabled=!:27:103)
+    at <unknown> (rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.js&appDir=%2Fhome%2Fmusayev%2FDocuments%2Falif%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fhome%2Fmusayev%2FDocuments%2Falif&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D&isGlobalNotFoundEnabled=! (/home/musayev/Documents/alif/.next/server/app/page.js:55:1)
+    at __webpack_require__ (file:///home/musayev/Documents/alif/.next/server/webpack-runtime.js:25:42)
+    at __webpack_exec__ (file:///home/musayev/Documents/alif/.next/server/app/page.js:279:39)
+    at <unknown> (file:///home/musayev/Documents/alif/.next/server/app/page.js:280:104)
+    at __webpack_require__.X (file:///home/musayev/Documents/alif/.next/server/webpack-runtime.js:155:21)
+    at <unknown> (file:///home/musayev/Documents/alif/.next/server/app/page.js:280:47)
+    at Object.<anonymous> (file:///home/musayev/Documents/alif/.next/server/app/page.js:283:3)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (file:///home/musayev/Documents/alif/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:182:18)
+    at requirePage (file:///home/musayev/Documents/alif/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/next-server.js:899:36)
+    at async DevServer.findPageComponents (file:///home/musayev/Documents/alif/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///home/musayev/Documents/alif/node_modules/next/dist/server/base-server.js:1460:24)
+    at async DevServer.renderToResponseImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/base-server.js:1514:32)
+    at async DevServer.pipeImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///home/musayev/Documents/alif/node_modules/next/dist/server/next-server.js:393:17)
+    at async DevServer.handleRequestImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/base-server.js:916:17)
+    at async (file:///home/musayev/Documents/alif/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///home/musayev/Documents/alif/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///home/musayev/Documents/alif/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+    at async invokeRender (file:///home/musayev/Documents/alif/node_modules/next/dist/server/lib/router-server.js:240:21)
+    at async handleRequest (file:///home/musayev/Documents/alif/node_modules/next/dist/server/lib/router-server.js:437:24)
+    at async requestHandlerImpl (file:///home/musayev/Documents/alif/node_modules/next/dist/server/lib/router-server.js:485:13)
+    at async Server.requestListener (file:///home/musayev/Documents/alif/node_modules/next/dist/server/lib/start-server.js:226:13)
+[  133586ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[  133590ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/favicon.ico:0
+[  171982ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  172984ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  173985ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  174987ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  175988ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  180990ms] [ERROR] WebSocket connection to 'ws://localhost:3010/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:88
+[  187028ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[  187048ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/_next/static/webpack/846032ca01556204.webpack.hot-update.json:0
+[  187049ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  189001ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[  191098ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3010/_next/static/webpack/846032ca01556204.webpack.hot-update.json:0
+[  191099ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  192412ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
